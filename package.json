@@ -6,10 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "prebuild": "node bumpVersion.js",
-    "set-version": "node ./setVersion.js && react-scripts start",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+     "build": "tsc && vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
