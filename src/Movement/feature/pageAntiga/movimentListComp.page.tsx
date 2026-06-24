@@ -42,7 +42,7 @@ export const Movement = observer(() => {
   const [form] = Form.useForm();
   
   const [query, setQuery] = useState({
-    descmovimento: "",
+    descMovimento: "",
     codcategoria: "",
     codconta: "",
     datainicio: "",
@@ -88,7 +88,7 @@ export const Movement = observer(() => {
     }
 
     setQuery({
-      descmovimento: values.descmovimento || "",
+      descMovimento: values.descMovimento || "",
       codcategoria: values.categoria || "", 
       codconta: values.conta || "",
       datainicio,
@@ -100,7 +100,7 @@ export const Movement = observer(() => {
   const handleClear = () => {
     form.resetFields();
     setQuery({
-      descmovimento: "",
+      descMovimento: "",
       codcategoria: "",
       codconta: "",
       datainicio: "",
@@ -112,7 +112,7 @@ export const Movement = observer(() => {
   const movementData = listMovement({
     page: pagination.page,
     size: pagination.size,
-    descmovimento: query.descmovimento,
+    descMovimento: query.descMovimento,
     //@ts-ignore
     codcategoria: query.codcategoria,
     //@ts-ignore
@@ -147,11 +147,11 @@ export const Movement = observer(() => {
     },
     {
       title: "Descrição / Vínculos",
-      key: "descmovimento",
+      key: "descMovimento",
       width: "25%",
       render: (_: any, record: any) => (
         <Space direction="vertical" size={2}>
-          <Text strong>{record.descmovimento}</Text>
+          <Text strong>{record.descMovimento}</Text>
           <Space size={4} wrap>
             {record.categoria?.desccategoria && (
               <Tag color="blue" style={{ fontSize: "11px" }}>{record.categoria.desccategoria}</Tag>
@@ -241,7 +241,7 @@ export const Movement = observer(() => {
           />
           <Popconfirm
             title="Tem certeza que deseja deletar?"
-            onConfirm={() => handleDelete(Number(record.codmovimentacao))}
+            onConfirm={() => handleDelete(Number(record.codMovimentacao))}
             okText="Sim"
             cancelText="Não"
           >
@@ -265,7 +265,7 @@ export const Movement = observer(() => {
             <Form layout="vertical" form={form} onFinish={handleSearch}>
               <Row gutter={16} align="bottom">
                 <Col xs={24} sm={12} md={5}>
-                  <Form.Item label="Descrição" name="descmovimento">
+                  <Form.Item label="Descrição" name="descMovimento">
                     <Input placeholder="Ex: Compra Mercado" allowClear />
                   </Form.Item>
                 </Col>
@@ -399,7 +399,7 @@ export const Movement = observer(() => {
           data={
             (editingMovement ?? {
               indativo: true,
-              descmovimento: "",
+              descMovimento: "",
               valorunit: "0",
               porcjuros: "0",
               valorjuros: "0",
